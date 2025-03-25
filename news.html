@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sports News | FABRIZOM</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Additional News Page Styles */
+    .sport-section {
+      padding: 4rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .sport-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, 
+        rgba(52, 152, 219, 0.05) 0%, 
+        transparent 70%);
+      z-index: -1;
+    }
+    
+    .sport-section h2 {
+      font-size: 3rem;
+      text-align: center;
+      margin-bottom: 3rem;
+      color: var(--accent);
+      position: relative;
+      display: inline-block;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .sport-section h2::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--secondary), var(--accent));
+      border-radius: 2px;
+    }
+    
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 3rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .news-article {
+      background: linear-gradient(145deg, rgba(44, 62, 80, 0.8), rgba(26, 26, 46, 0.9));
+      border-radius: 15px;
+      overflow: hidden;
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      position: relative;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .news-article:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    }
+    
+    .news-image {
+      height: 220px;
+      overflow: hidden;
+    }
+    
+    .news-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .news-article:hover .news-image img {
+      transform: scale(1.05);
+    }
+    
+    .news-content {
+      padding: 1.8rem;
+    }
+    
+    .news-content h3 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      color: var(--light);
+    }
+    
+    .news-meta {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem;
+    }
+    
+    .news-content p {
+      margin-bottom: 1.5rem;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.7;
+    }
+    
+    .read-more {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.7rem 1.5rem;
+      background: var(--accent);
+      color: white;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .read-more:hover {
+      background: var(--secondary);
+      transform: translateX(5px);
+    }
+    
+    .read-more i {
+      margin-left: 8px;
+      transition: transform 0.3s ease;
+    }
+    
+    .read-more:hover i {
+      transform: translateX(5px);
+    }
+    
+    @media (max-width: 768px) {
+      .sport-section h2 {
+        font-size: 2.5rem;
+      }
+      
+      .news-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo"><span>FABRIZOM</span></div>
+    <nav>
+      <ul>
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="news.html" class="active"><i class="fas fa-newspaper"></i> News</a></li>
+        <li><a href="history.html"><i class="fas fa-landmark"></i> History</a></li>
+        <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Football News -->
+    <section id="football" class="sport-section">
+      <h2><i class="fas fa-futbol"></i> Football News</h2>
+      <div class="news-grid">
+        <article class="news-article">
+          <div class="news-image">
+            <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Champions League Match">
+          </div>
+          <div class="news-content">
+            <div class="news-meta">
+              <span><i class="far fa-calendar-alt"></i> June 15, 2023</span>
+              <span><i class="far fa-comment"></i> 24 Comments</span>
+            </div>
+            <h3>Manchester City Wins Champions League Final</h3>
+            <p>Manchester City claimed their first Champions League title with a 1-0 victory over Inter Milan in a tense final in Istanbul. Rodri's 68th-minute strike proved decisive as Pep Guardiola's side completed the treble.</p>
+            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="news-article">
+          <div class="news-image">
+            <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Messi with PSG">
+          </div>
+          <div class="news-content">
+            <div class="news-meta">
+              <span><i class="far fa-calendar-alt"></i> June 10, 2023</span>
+              <span><i class="far fa-comment"></i> 42 Comments</span>
+            </div>
+            <h3>Messi Announces Move to Inter Miami</h3>
+            <p>Lionel Messi has confirmed he will join MLS side Inter Miami after leaving Paris Saint-Germain, turning down a lucrative offer from Saudi Arabia. The Argentine superstar will make his debut in July.</p>
+            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="news-article">
+          <div class="news-image">
+            <img src="https://images.unsplash.com/photo-1563732809711-7e739503a706?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Premier League Action">
+          </div>
+          <div class="news-content">
+            <div class="news-meta">
+              <span><i class="far fa-calendar-alt"></i> June 5, 2023</span>
+              <span><i class="far fa-comment"></i> 18 Comments</span>
+            </div>
+            <h3>Premier League Announces 2023-24 Schedule</h3>
+            <p>The Premier League has released its fixtures for the upcoming season, with Manchester City beginning their title defense at Burnley. The first Manchester derby will take place on October 28 at Old Trafford.</p>
+            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Basketball News -->
+    <section id="basketball" class="sport-section">
+      <h2><i class="fas fa-basketball-ball"></i> Basketball News</h2>
+      <div class="news-grid">
+        <article class="news-article">
+          <div class="news-image">
+            <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="NBA Finals">
+          </div>
+          <div class="news-content">
+            <div class="news-meta">
+              <span><i class="far fa-calendar-alt"></i> June 13, 2023</span>
+              <span><i class="far fa-comment"></i> 31 Comments</span>
+            </div>
+            <h3>Nuggets Win First NBA Championship</h3>
+            <p>The Denver Nuggets defeated the Miami Heat 94-89 in Game 5 to win their first NBA championship in franchise history. Nikola Jokić was named Finals MVP after averaging 30.2 points, 14.0 rebounds and 7.2 assists in the series.</p>
+            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="news-article">
+          <div class="news-image">
+            <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Victor Wembanyama">
+          </div>
+          <div class="news-content">
+            <div class="news-meta">
+              <span><i class="far fa-calendar-alt"></i> June 22, 2023</span>
+              <span><i class="far fa-comment"></i> 56 Comments</span>
+            </div>
+            <h3>Spurs Select Wembanyama with No. 1 Pick</h3>
+            <p>As expected, the San Antonio Spurs selected French phenom Victor Wembanyama with the first overall pick in the 2023 NBA Draft. The 7'4" center is considered one of the best prospects in NBA history.</p>
+            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="news-article">
+          <div class="news-image">
+            <img src="https://images.unsplash.com/photo-1519861531473-9200262188bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="WNBA Action">
+          </div>
+          <div class="news-content">
+            <div class="news-meta">
+              <span><i class="far fa-calendar-alt"></i> June 18, 2023</span>
+              <span><i class="far fa-comment"></i> 22 Comments</span>
+            </div>
+            <h3>Las Vegas Aces Off to Record Start</h3>
+            <p>The defending champion Las Vegas Aces have opened the WNBA season with 12 consecutive wins, breaking the previous record for best start to a season. A'ja Wilson is averaging 20.3 points and 9.8 rebounds per game.</p>
+            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Cricket News -->
+    <section id="cricket" class="sport-section">
+      <h2><i class="fas fa-baseball-ball"></i> Cricket News</h2>
+      <div class="news-grid">
+        <article class="news-article">
+          <div class="news-image">
+            <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Ashes Series">
+          </div>
+          <div class="news-content">
+            <div class="news-meta">
+              <span><i class="far fa-calendar-alt"></i> June 20, 2023</span>
+              <span><i class="far fa-comment"></i> 38 Comments</span>
+            </div>
+            <h3>England Fight Back in First Ashes Test</h3>
+            <p>England staged a remarkable comeback on day four of the first Ashes Test at Edgbaston, with Joe Root scoring an unbeaten 118 to set Australia a target of 281. The match is poised for an exciting final day.</p>
+            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="news-article">
+          <div class="news-image">
+            <img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="IPL Trophy">
+          </div>
+          <div class="news-content">
+            <div class="news-meta">
+              <span><i class="far fa-calendar-alt"></i> June 1, 2023</span>
+              <span><i class="far fa-comment"></i> 47 Comments</span>
+            </div>
+            <h3>Chennai Super Kings Win Record Fifth IPL Title</h3>
+            <p>MS Dhoni's Chennai Super Kings defeated Gujarat Titans by 5 wickets in a rain-affected final to claim their fifth Indian Premier League title. Ravindra Jadeja hit the winning runs off the last ball in a thrilling finish.</p>
+            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="news-article">
+          <div class="news-image">
+            <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Women's Cricket">
+          </div>
+          <div class="news-content">
+            <div class="news-meta">
+              <span><i class="far fa-calendar-alt"></i> June 8, 2023</span>
+              <span><i class="far fa-comment"></i> 29 Comments</span>
+            </div>
+            <h3>Australia Retain Women's Ashes</h3>
+            <p>The Australian women's cricket team retained the Ashes after the third T20I ended in a tie, giving them an unassailable 8-6 lead in the multi-format series. Beth Mooney's 61 not out was the standout performance.</p>
+            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+          

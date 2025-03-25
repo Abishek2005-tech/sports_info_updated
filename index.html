@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FABRIZOM - Sports World</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="particles" id="particles"></div>
+    
+    <div class="sidebar-logo"></div>
+
+    <header>
+        <div class="logo"><span>FABRIZOM</span></div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="news.html"><i class="fas fa-newspaper"></i> News</a></li>
+                <li><a href="history.html"><i class="fas fa-landmark"></i> History</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="floating">Welcome to the <span>Sports World</span></h1>
+                <p>Your ultimate destination for sports news, highlights, and history</p>
+                <div class="hero-buttons">
+                    <a href="news.html" class="btn-primary">Latest News</a>
+                    <a href="history.html" class="btn-secondary">Sports History</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-sports">
+            <h2>Featured Sports</h2>
+            <div class="sports-grid">
+                <div class="sport-card" onclick="location.href='news.html#football'">
+                    <div class="sport-icon">
+                        <i class="fas fa-futbol"></i>
+                    </div>
+                    <h3>Football</h3>
+                    <p>The world's most popular sport with thrilling matches and legendary players.</p>
+                </div>
+                <div class="sport-card" onclick="location.href='news.html#basketball'">
+                    <div class="sport-icon">
+                        <i class="fas fa-basketball-ball"></i>
+                    </div>
+                    <h3>Basketball</h3>
+                    <p>High-flying action and intense competition on the hardwood.</p>
+                </div>
+                <div class="sport-card" onclick="location.href='news.html#cricket'">
+                    <div class="sport-icon">
+                        <i class="fas fa-baseball-ball"></i>
+                    </div>
+                    <h3>Cricket</h3>
+                    <p>A game of strategy and skill loved by billions worldwide.</p>
+                </div>
+                <div class="sport-card" onclick="location.href='news.html#tennis'">
+                    <div class="sport-icon">
+                        <i class="fas fa-table-tennis"></i>
+                    </div>
+                    <h3>Tennis</h3>
+                    <p>Elegant yet powerful, a test of individual skill and endurance.</p>
+                </div>
+            </div>
+        </section>
+        <section class="interactive-poll">
+          <h2>Sports Poll: Who Will Win the Next World Cup?</h2>
+          <form>
+              <input type="radio" id="team1" name="team" value="team1">
+              <label for="team1">Argentina</label><br>
+              <input type="radio" id="team2" name="team" value="team2">
+              <label for="team2">Brazil</label><br>
+              <input type="radio" id="team3" name="team" value="team3">
+              <label for="team3">Portugal</label><br>
+              <button type="submit">Vote</button>
+              
+          </form>
+      </section>
+
+        <section class="quick-links">
+            <div class="link-card" onclick="location.href='history.html#football-history'">
+                <i class="fas fa-book"></i>
+                <h3>Football History</h3>
+            </div>
+            <div class="link-card" onclick="location.href='history.html#olympics'">
+                <i class="fas fa-medal"></i>
+                <h3>Olympic Moments</h3>
+            </div>
+            <div class="link-card" onclick="location.href='about.html#team'">
+                <i class="fas fa-users"></i>
+                <h3>Our Team</h3>
+            </div>
+            <div class="link-card" onclick="location.href='about.html#contact'">
+                <i class="fas fa-envelope"></i>
+                <h3>Contact Us</h3>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>FABRIZOM</h3>
+                <p>Bringing you the best in sports coverage since 2024</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="history.html">History</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><i class="fas fa-phone"></i> 7594876123</p>
+                <p><i class="fas fa-envelope"></i> info@fabrizom.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 FABRIZOM Sports World. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sports History | FABRIZOM</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* History Page Specific Styles */
+    .history-section {
+      padding: 5rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .history-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, 
+        rgba(52, 152, 219, 0.1) 0%, 
+        transparent 70%);
+      z-index: -1;
+    }
+    
+    .history-section h2 {
+      font-size: 3rem;
+      text-align: center;
+      margin-bottom: 3rem;
+      color: var(--accent);
+      position: relative;
+      display: inline-block;
+    }
+    
+    .history-section h2::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--secondary), var(--accent));
+      border-radius: 2px;
+    }
+    
+    .history-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    
+    .history-text {
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.8;
+    }
+    
+    .history-text p {
+      margin-bottom: 1.5rem;
+    }
+    
+    .history-image {
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+      transition: transform 0.5s ease;
+      height: 350px;
+    }
+    
+    .history-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .history-image:hover {
+      transform: translateY(-10px);
+    }
+    
+    .history-image:hover img {
+      transform: scale(1.05);
+    }
+    
+    /* Timeline Section */
+    .timeline-section {
+      padding: 5rem 2rem;
+      background: linear-gradient(to bottom, 
+        rgba(26, 26, 46, 0.8), 
+        rgba(44, 62, 80, 0.9));
+      position: relative;
+    }
+    
+    .timeline-section h2 {
+      font-size: 3rem;
+      text-align: center;
+      margin-bottom: 4rem;
+      color: var(--accent);
+    }
+    
+    .timeline-container {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .timeline-container::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      background: linear-gradient(to bottom, var(--accent), var(--secondary));
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -3px;
+      border-radius: 3px;
+    }
+    
+    .timeline-item {
+      padding: 10px 40px;
+      position: relative;
+      width: 50%;
+      box-sizing: border-box;
+    }
+    
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      background: var(--secondary);
+      border: 4px solid var(--accent);
+      top: 15px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+    
+    .left {
+      left: 0;
+    }
+    
+    .right {
+      left: 50%;
+    }
+    
+    .left::after {
+      right: -12px;
+    }
+    
+    .right::after {
+      left: -12px;
+    }
+    
+    .timeline-content {
+      padding: 20px 30px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      transition: all 0.5s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .timeline-item:hover .timeline-content {
+      transform: scale(1.03);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      background: rgba(255, 255, 255, 0.15);
+    }
+    
+    .timeline-content h3 {
+      color: var(--light);
+      margin-bottom: 1rem;
+    }
+    
+    .timeline-content p {
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.6;
+    }
+    
+    .timeline-date {
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      background: var(--accent);
+      color: white;
+      border-radius: 20px;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+      font-size: 0.9rem;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 900px) {
+      .history-content {
+        grid-template-columns: 1fr;
+      }
+      
+      .history-image {
+        order: -1;
+        height: 300px;
+      }
+      
+      .timeline-container::after {
+        left: 31px;
+      }
+      
+      .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+      
+      .timeline-item::after {
+        left: 18px;
+      }
+      
+      .left::after, .right::after {
+        left: 18px;
+      }
+      
+      .right {
+        left: 0;
+      }
+    }
+    
+    @media (max-width: 600px) {
+      .history-section h2, 
+      .timeline-section h2 {
+        font-size: 2.5rem;
+      }
+      
+      .history-image {
+        height: 250px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo"><span>FABRIZOM</span></div>
+    <nav>
+      <ul>
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="news.html"><i class="fas fa-newspaper"></i> News</a></li>
+        <li><a href="history.html" class="active"><i class="fas fa-landmark"></i> History</a></li>
+        <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Football History -->
+    <section id="football-history" class="history-section">
+      <h2><i class="fas fa-futbol"></i> Football History</h2>
+      <div class="history-content">
+        <div class="history-text">
+          <p>Football, also known as soccer in some countries, has a rich history dating back more than 2,000 years to ancient China, Greece, and Rome. However, the modern game as we know it today originated in England in the 19th century.</p>
+          
+          <p>The Football Association (FA) was formed in 1863, establishing the first unified rules of the game. The first official international match took place in 1872 between Scotland and England, ending in a 0-0 draw.</p>
+          
+          <p>The FIFA World Cup, first held in 1930 in Uruguay, has grown to become the most prestigious tournament in international football. Brazil holds the record with five World Cup victories.</p>
+          
+          <p>Club football has also evolved dramatically, with the UEFA Champions League becoming the pinnacle of European club competition since its inception in 1955 as the European Cup.</p>
+        </div>
+        <div class="history-image">
+          <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Historic Football Match">
+        </div>
+      </div>
+    </section>
+
+    <!-- Olympic History -->
+    <section id="olympics" class="history-section">
+      <h2><i class="fas fa-medal"></i> Olympic History</h2>
+      <div class="history-content">
+        <div class="history-image">
+          <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Olympic Games">
+        </div>
+        <div class="history-text">
+          <p>The ancient Olympic Games originated in Greece as early as 776 BC and were held every four years in Olympia for nearly 12 centuries. The modern Olympics were revived in 1896 by Pierre de Coubertin.</p>
+          
+          <p>The first modern Olympics in Athens in 1896 featured 241 athletes from 14 nations competing in 43 events. Today, the Summer Olympics include over 11,000 athletes from more than 200 countries.</p>
+          
+          <p>Notable Olympic moments include Jesse Owens' four gold medals in 1936 Berlin, the "Miracle on Ice" in 1980 when the US hockey team beat the Soviets, and Usain Bolt's record-breaking sprints in 2008, 2012, and 2016.</p>
+          
+          <p>The Winter Olympics were first held in 1924 in Chamonix, France. The Paralympic Games for athletes with disabilities were introduced in 1960 and have grown alongside the main Olympic movement.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sports Timeline -->
+    <section class="timeline-section">
+      <h2>Sports Timeline</h2>
+      <div class="timeline-container">
+        <div class="timeline-item left">
+          <div class="timeline-content">
+            <span class="timeline-date">1863</span>
+            <h3>Foundation of The Football Association</h3>
+            <p>The FA was formed in London, establishing the first unified rules of football and marking the birth of modern soccer.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item right">
+          <div class="timeline-content">
+            <span class="timeline-date">1896</span>
+            <h3>First Modern Olympic Games</h3>
+            <p>The inaugural modern Olympics were held in Athens, reviving the ancient tradition after 1,500 years.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item left">
+          <div class="timeline-content">
+            <span class="timeline-date">1930</span>
+            <h3>First FIFA World Cup</h3>
+            <p>Uruguay hosted and won the first World Cup tournament, defeating Argentina 4-2 in the final.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item right">
+          <div class="timeline-content">
+            <span class="timeline-date">1946</span>
+            <h3>NBA Founded</h3>
+            <p>The Basketball Association of America was formed, which would become the NBA after merging with the NBL in 1949.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item left">
+          <div class="timeline-content">
+            <span class="timeline-date">1975</span>
+            <h3>First Cricket World Cup</h3>
+            <p>The inaugural Cricket World Cup was held in England, with West Indies defeating Australia in the final.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item right">
+          <div class="timeline-content">
+            <span class="timeline-date">1992</span>
+            <h3>Dream Team Dominates</h3>
+            <p>The US basketball "Dream Team" featuring Michael Jordan and Magic Johnson won Olympic gold in Barcelona, popularizing basketball globally.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item left">
+          <div class="timeline-content">
+            <span class="timeline-date">2008</span>
+            <h3>Phelps' 8 Gold Medals</h3>
+            <p>Michael Phelps won a record 8 gold medals in swimming at the Beijing Olympics, surpassing Mark Spitz's 1972 record.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item right">
+          <div class="timeline-content">
+            <span class="timeline-date">2022</span>
+            <h3>First Winter World Cup</h3>
+            <p>Qatar hosted the first FIFA World Cup held in November-December, with Argentina winning in a dramatic final against France.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>FABRIZOM</h3>
+        <p>Bringing you the best in sports coverage since 2024</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="history.html">History</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p><i class="fas fa-phone"></i> 7594876123</p>
+        <p><i class="fas fa-envelope"></i> info@fabrizom.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 FABRIZOM Sports World. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | FABRIZOM</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* About Page Specific Styles */
+        .about-section {
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center,
+                rgba(243, 156, 18, 0.1) 0%,
+                transparent 70%);
+            z-index: -1;
+        }
+
+        .about-section h2 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--accent);
+            position: relative;
+            display: inline-block;
+        }
+
+        .about-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            border-radius: 2px;
+        }
+
+        .about-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            transition: transform 0.5s ease;
+            height: 350px;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .about-image:hover {
+            transform: translateY(-10px);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 5rem 2rem;
+            background: linear-gradient(to bottom,
+                rgba(26, 26, 46, 0.8),
+                rgba(44, 62, 80, 0.9));
+            position: relative;
+        }
+
+        .team-section h2 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            color: var(--accent);
+        }
+
+        .team-members {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .team-member {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.5s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .team-member:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+
+        .team-member h3 {
+            color: var(--light);
+            margin-bottom: 0.5rem;
+        }
+
+        .team-member p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                order: -1;
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .about-section h2,
+            .team-section h2 {
+                font-size: 2.5rem;
+            }
+
+            .about-image {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><span>FABRIZOM</span></div>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="news.html"><i class="fas fa-newspaper"></i> News</a></li>
+                <li><a href="history.html"><i class="fas fa-landmark"></i> History</a></li>
+                <li><a href="about.html" class="active"><i class="fas fa-info-circle"></i> About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about-fabrizom" class="about-section">
+            <h2>About FABRIZOM</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Welcome to FABRIZOM, your premier source for comprehensive sports coverage. We are dedicated to bringing you the latest news, in-depth historical insights, and engaging stories from the world of sports.</p>
+                    <p>Our mission is to provide accurate, timely, and engaging content that caters to sports enthusiasts of all kinds. From the thrill of live events to the rich legacy of sports history, FABRIZOM is your all-access pass to the sporting world.</p>
+                    <p>We believe in the power of sports to inspire, unite, and entertain. Our team of experienced writers and analysts are committed to delivering high-quality content that reflects the passion and excitement of sports.</p>
+                    <p>Join us as we explore the stories behind the games, celebrate the achievements of athletes, and delve into the history that shapes the sporting world.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="About FABRIZOM">
+                </div>
+            </div>
+        </section>
+        <section id="our-team" class="team-section">
+            <h2>Our Team</h2>
+            <div class="team-members">
+                <div class="team-member">
+                    <h3>Abishek</h3>
+                    <p>Lead Editor</p>
+                    <p>Expert in sports journalism and content strategy.</p>
+                </div>
+                <div class="team-member">
+                    <h3>Balraj</h3>
+                    <p>Senior Analyst</p>
+                    <p>Provides in-depth analysis and statistical insights.</p>
+                </div>
+                <div class="team-member">
+                    <h3>Manjula</h3>
+                    <p>Digital Producer</p>
+                    <p>Manages digital content and social media engagement.</p>
+                </div>
+                <div class="team-member">
+                    <h3>Chris Patel</h3>
+                    <p>Sports Historian</p>
+                    <p>Specializes in sports history and archival research.</p>
+                </div>
+                <div class="team-member">
+                    <h3>Aishwarya</h3>
+                    <p>Content Writer</p>
+                    <p>Creates engaging and informative sports articles.</p>
+                </div>
+                <div class="team-member">
+                    <h3>David Kim</h3>
+                    <p>Multimedia Specialist</p>
+                    <p>Produces high-quality videos and graphics.</p>
+                </div>
+            </div>
+        </section>
